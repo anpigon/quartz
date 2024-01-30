@@ -6,14 +6,13 @@ tistoryCategory: "1022554"
 tistorySkipModal: true
 tistoryPostId: "449"
 tistoryPostUrl: https://anpigon.tistory.com/449
-aliases:
-  - 옵시디언 무료 퍼블리시 방법
-title: 옵시디언 무료 퍼블리시 방법
-draft: "false"
+title: Quartz를 이용해 옵시디언 노트를 웹에 게시하기
 date: 2024-01-28
 tags:
   - 옵시디언
   - Quartz
+aliases:
+  - Quartz를 이용해 옵시디언 노트를 웹에 게시하기
 ---
 옵시디언 노트를 서버에 무료로 호스팅 할 수 있는 방법(Github Page, Vercel, Netlify, GibLab Page), 은 다양합니다. 저는 Cloueflare에 배포하는 방법을 설명합니다. 다른 방법은 [여기](https://quartz.jzhao.xyz/hosting) 를 참고해주세요.
 
