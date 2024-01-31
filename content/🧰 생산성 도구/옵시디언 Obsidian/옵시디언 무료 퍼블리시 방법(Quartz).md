@@ -7,7 +7,7 @@ tistorySkipModal: true
 tistoryPostId: "449"
 tistoryPostUrl: https://anpigon.tistory.com/449
 title: Quartz를 이용해 옵시디언 노트를 웹에 게시하기
-date: 2024-01-28
+date: 2024-01-28 09:46:06
 tags:
   - 옵시디언
   - Quartz
@@ -45,10 +45,8 @@ GitHub의 [Quartz](https://github.com/jackyzha0/quartz) 페이지에 방문합�
 
 ![](https://i.imgur.com/Bp14LkG.png)
 
-
 ## 옵시디언 노트를 웹에 게시하기
 Flowershow 플러그인을 사용하여 Obsidian 노트를 게시할 수 있습니다. Flowershow 플러그인 사용 방법은 "[[Obsidian에서 Flowershow 플러그인으로 무료로 퍼블리시하는 방법]]" 글을 참고하세요.
-
 
 ## 마치며
 
@@ -58,3 +56,8 @@ Flowershow 플러그인을 사용하여 Obsidian 노트를 게시할 수 있습�
 
 ## 연결 문서
 - [[Quartz 블로그에 댓글 기능 추가하기]]
+
+## Quartz 템플릿으로 만든 블로그
+- [Drill Garden](https://drillgarden.netlify.app/) 
+- [DQ's garden](https://dqjeon.github.io)
+- [개발자 유니의 두 번째 뇌](https://shin-jae-yoon.github.io) 
