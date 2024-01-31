@@ -1,5 +1,7 @@
 ---
 title: "Quartz 블로그에 댓글 기능 추가하기: Giscus 사용 방법"
+tags:
+  - Quartz
 ---
 Quart 블로그에 댓글 기능을 추가하고 싶으신가요? [Giscus](https://giscus.app/ko)를 사용하면 Quartz 블로그에 쉽게 댓글 기능을 추가할 수 있습니다. Giscus는 GitHub Discussions를 기반으로 하는 무료 댓글 시스템으로, 별도의 데이터베이스 서버가 필요 없습니다.
 ## Giscus 설치 준비
