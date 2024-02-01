@@ -23,7 +23,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Comments(),
   ],
   left: [
-    Component.MobileOnly(Component.MenuButton()),
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
