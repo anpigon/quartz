@@ -55,12 +55,13 @@ Flowershow 플러그인을 사용하여 Obsidian 노트를 게시할 수 있습�
 
 ## 마치며
 
-다음은 Quartz와 Flowershow 플러그인을 이용해 만든 제 사이트입니다: [anpigon.pages.dev](https://anpigon.pages.dev/)
+%%다음은 Quartz와 Flowershow 플러그인을 이용해 만든 제 사이트입니다: [anpigon.pages.dev](https://anpigon.pages.dev/)%%
 
-위 사이트는 Obsidian 노트를 기반으로 만들어졌으며, Quartz 템플릿과 Flowershow 플러그인을 활용해 Cloudflare를 통해 온라인에 게시되었습니다. 여기에는 앞으로 제가 작성한 노트를 공유할 예정입니다.
+이 사이트는 Obsidian 노트를 기반으로 만들어졌으며, Quartz 템플릿과 Flowershow 플러그인을 활용해 Cloudflare를 통해 온라인에 게시되었습니다. 여기에는 앞으로 제가 작성한 노트를 공유할 예정입니다.
 
 ## 연결 문서
 - [[Quartz 블로그에 댓글 기능 추가하기]]
+- [[Obsidian에서 Flowershow 플러그인으로 무료로 퍼블리시하는 방법]]
 
 ## Quartz 템플릿으로 만든 블로그
 - [Drill Garden](https://drillgarden.netlify.app/) 
