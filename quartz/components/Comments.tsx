@@ -5,7 +5,7 @@ export default (() => {
     return (
       <script
         src="https://giscus.app/client.js"
-        data-repo="anpigon/quartz"
+        data-repo="anpigon/anpigon-quartz"
         data-repo-id="R_kgDOLKhz-Q"
         data-category="General"
         data-category-id="DIC_kwDOLKhz-c4CczBa"
