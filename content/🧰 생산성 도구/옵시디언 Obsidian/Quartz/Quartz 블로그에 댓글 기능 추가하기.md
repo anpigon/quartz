@@ -2,8 +2,13 @@
 title: "Quartz 블로그에 댓글 기능 추가하기: Giscus 사용 방법"
 tags:
   - Quartz
+date: 2024-01-30 02:09:56
 ---
-Quart 블로그에 댓글 기능을 추가하고 싶으신가요? [Giscus](https://giscus.app/ko)를 사용하면 Quartz 블로그에 쉽게 댓글 기능을 추가할 수 있습니다. Giscus는 GitHub Discussions를 기반으로 하는 무료 댓글 시스템으로, 별도의 데이터베이스 서버가 필요 없습니다.
+Quartz 블로그에 댓글 기능을 추가하고 싶으신가요? [Giscus](https://giscus.app/ko)를 사용하면 Quartz 블로그에 쉽게 댓글 기능을 추가할 수 있습니다. Giscus는 GitHub Discussions를 기반으로 하는 무료 댓글 시스템으로, 별도의 DB 서버가 필요 없습니다.
+
+> [!warning] 주의사항
+> 본 가이드에서 설명하는 방법으로 Quartz 코드를 직접 수정할 경우, 새로운 버전의 Quartz가 출시되었을 때 [Quartz 버전 업그레이드](https://quartz.jzhao.xyz/upgrading)를 위한 `quartz update` 명령어가 정상적으로 작동하지 않을 수 있습니다.
+
 ## Giscus 설치 준비
 [Giscus 웹사이트](https://giscus.app/ko)를 방문하여 필요한 설정을 입력합니다. 여기서는 GitHub 레포지토리와 댓글을 매핑할 방법 등을 설정할 수 있습니다.
 
@@ -28,8 +33,8 @@ export default (() => {
         src="https://giscus.app/client.js"
         data-repo="anpigon/quartz"
         data-repo-id="R_kgDOLKhz-Q"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOLKhz-c4CczBZ"
+        data-category="General"
+        data-category-id="DIC_kwDOLKhz-c4CczBa"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
