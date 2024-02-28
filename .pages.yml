@@ -3,3 +3,6 @@ content:
     label: Posts
     path: content
     type: collection
+    fields: [ { name: "title", type: "text" } ]
+        
+        
