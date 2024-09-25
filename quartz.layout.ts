@@ -5,7 +5,18 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        repo: 'anpigon/anpigon-quartz',
+        repoId: 'R_kgDOLKhz-Q',
+        category: 'General',
+        categoryId: 'DIC_kwDOLKhz-c4CczBa',
+        mapping: 'pathname',
+      }
+    }),
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",
@@ -21,7 +32,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
-    Component.Comments(),
   ],
   left: [
     Component.PageTitle(),

@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "google",
       tagId: "G-6XY03WD2ST",
     },
-    locale: "en-US",
+    locale: "ko-KR",
     baseUrl: "anpigon.pages.dev",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
