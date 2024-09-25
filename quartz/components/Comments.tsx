@@ -1,26 +1,44 @@
-import { QuartzComponentConstructor } from "./types"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { classNames } from "../util/lang"
+// @ts-ignore
+import script from "./scripts/comments.inline"
 
-export default (() => {
-  function Comments() {
+type Options = {
+  provider: "giscus"
+  options: {
+    repo: `${string}/${string}`
+    repoId: string
+    category: string
+    categoryId: string
+    mapping?: "url" | "title" | "og:title" | "specific" | "number" | "pathname"
+    strict?: boolean
+    reactionsEnabled?: boolean
+    inputPosition?: "top" | "bottom"
+  }
+}
+
+function boolToStringBool(b: boolean): string {
+  return b ? "1" : "0"
+}
+
+export default ((opts: Options) => {
+  const Comments: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
     return (
-      <script
-        src="https://giscus.app/client.js"
-        data-repo="anpigon/anpigon-quartz"
-        data-repo-id="R_kgDOLKhz-Q"
-        data-category="General"
-        data-category-id="DIC_kwDOLKhz-c4CczBa"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossOrigin="anonymous"
-        async
-      ></script>
+      <div
+        class={classNames(displayClass, "giscus")}
+        data-repo={opts.options.repo}
+        data-repo-id={opts.options.repoId}
+        data-category={opts.options.category}
+        data-category-id={opts.options.categoryId}
+        data-mapping={opts.options.mapping ?? "url"}
+        data-strict={boolToStringBool(opts.options.strict ?? true)}
+        data-reactions-enabled={boolToStringBool(opts.options.reactionsEnabled ?? true)}
+        data-input-position={opts.options.inputPosition ?? "bottom"}
+      ></div>
     )
   }
 
+  Comments.afterDOMLoaded = script
+
   return Comments
-}) satisfies QuartzComponentConstructor
+}) satisfies QuartzComponentConstructor<Options>
