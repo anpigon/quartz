@@ -185,8 +185,7 @@ retriever.invoke("김첨지의 직업은 무엇인가?")
 	[Document(metadata={'source': '운수 좋은 날.txt'}, page_content='그 중에서 손님을 물색하는 김 첨지의 눈엔 양머리에 뒤축 높은 구두를 신고 망토까지 두른 기생 퇴물인 듯 난봉 여학생인 듯 한 여편네의 모양이 띄었다.\n\n그는 슬근슬근 그 여자의 곁으로 다가들었다.\n\n“ 아씨, 인력거 아니 타시랍시요.\n\n” 그 여학생인지 만 지가 한참은 매우 때깔을 빼며 입술을 꼭 다문 채 김 첨지 를 거들떠보지도 않았다.\n\n김 첨지는 구걸하는 거지나 무엇같이 연해 연방 그 의 기색을 살피며, “ 아씨, 정거장 애 들보 담 아주 싸게 모셔 다 드리겠습니다.\n\n댁이 어디 신 가 요.\n\n” 하고 추근추근하게도 그 여자의 들고 있는 일본식 버들 고리짝에 제 손을 대 었다.\n\n“ 왜 이래, 남 귀치 않게.” 소리를 벽력 같이 지르고는 돌아선다.\n\n김 첨지는 어랍시요 하고 물러섰다.\n\n전차는 왔다.\n\n김 첨지는 원망스럽게 전차 타는 이를 노리고 있었다.\n\n그러나 그의 예감( 豫感) 은 틀리지 않았다.')]
 
 > [!info]
->
-FAISS 벡터 스토어를 검색하는 다른 방법도 다양하게 있습니다. 이러한 방법의 전체 목록은 [FAISS API 문서](https://python.langchain.com/api_reference/community/vectorstores/langchain_community.vectorstores.faiss.FAISS.html)를 참조하세요.
+> FAISS 벡터 스토어를 검색하는 다른 방법도 다양하게 있습니다. 이러한 방법의 전체 목록은 [FAISS API 문서](https://python.langchain.com/api_reference/community/vectorstores/langchain_community.vectorstores.faiss.FAISS.html)를 참조하세요.
 
 ### 7. RAG(Retrieval-Augmented Generation) 체인 만들기
 
