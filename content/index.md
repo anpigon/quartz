@@ -3,7 +3,7 @@ created: 2024-09-24 09:51:33
 updated: 2024-09-27 11:29:46
 dg-home: true
 dg-publish: true
-title: 저의 디지털 가든에 오신것을 환영합니다
+title: Home
 ---
 
 # 저의 디지털 가든에 오신것을 환영합니다
