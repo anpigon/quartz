@@ -1,8 +1,9 @@
 ---
 created: 2024-09-24 09:51:33
-updated: 2024-09-27 11:29:46
+updated: 2024-10-02 12:51:40
 dg-home: true
 dg-publish: true
+dg-path: /
 title: Home
 ---
 
