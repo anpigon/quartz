@@ -1,7 +1,8 @@
 ---
 created: 2024-10-04 08:52:16
-updated: 2024-10-04 08:58:21
+updated: 2024-10-04 08:58:53
 dg-publish: true
+title: Spring AI 시작하기
 ---
 
 이 섹션에서는 Spring AI 사용을 시작하는 방법에 대한 시작점을 제공합니다.
@@ -9,7 +10,7 @@ dg-publish: true
 필요에 따라 다음 섹션의 각 단계를 따라야 합니다.
 
 > [!Info] 노트
-Spring AI는 Spring Boot 3.2.x 및 3.3.x를 지원합니다.
+> Spring AI는 Spring Boot 3.2.x 및 3.3.x를 지원합니다.
 
 ## 스프링 초기화
 
