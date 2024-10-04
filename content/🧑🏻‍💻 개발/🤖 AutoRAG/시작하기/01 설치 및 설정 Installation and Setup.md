@@ -1,8 +1,10 @@
 ---
 created: 2024-10-04 02:45:47
-updated: 2024-10-04 08:06:59
+updated: 2024-10-04 08:12:32
 dg-publish: true
 title: 설치 및 설정
+tags:
+  - AutoRAG
 ---
 
 > 원문: https://docs.auto-rag.com/install.html
@@ -24,7 +26,7 @@ python3 -c "import nltk; nltk.download('punkt_tab')"
 python3 -c "import nltk; nltk.download('averaged_perceptron_tagger_eng')"
 ```
 
-> [!example] 설치에 문제가 있나요?
+> [!warning] 설치에 문제가 있나요?
 > [설치에 문제가 있나요? 먼저 문제 해결](https://docs.auto-rag.com/troubleshooting.html) 페이지를 확인하세요 .
 
 ## Windows 사용자를 위한 참고 사항
@@ -35,7 +37,9 @@ AutoRAG는 아직 Windows에서 완전히 지원되지 않습니다. Windows 사
 2. Windows 환경에서는 구문 분석이 제대로 작동하지 않을 수 있습니다.
 3. `batch` 설정이 1로 설정된 FlagEmbedding passage reranker를 사용할 수 없습니다. 기본 `batch`는 64입니다.
 
-제약 조건으로 인해 Windows에서 AutoRAG를 실행하려면 Docker 이미지를 사용하는 것이 좋습니다. 또한 Windows 사용자의 경우 반드시 v0.3.1로 업그레이드해야 합니다. 
+제약 조건으로 인해 Windows에서 AutoRAG를 실행하려면 Docker 이미지를 사용하는 것이 좋습니다.
+
+또한 Windows 사용자의 경우 반드시 v0.3.1로 업그레이드해야 합니다. 
 
 ## 파싱을 위한 설치 🌲
 
@@ -67,7 +71,7 @@ Mac 사용자를 위한 지침은 [여기](https://velog.io/@yoonsy/M1%EC%B9%A9
 
 ## OPENAI API 키 설정
 
-LLM과 임베딩 모델을 사용하려면 OpenAI 모델을 사용하는 것이 일반적입니다. 다른 모델을 사용하려면 [여기를 확인하세요.](https://docs.auto-rag.com/local_model.html)
+LLM과 임베딩 모델을 사용하려면 OpenAI 모델을 사용하는 것이 일반적입니다. 다른 모델을 사용하려면 [여기](https://docs.auto-rag.com/local_model.html)를 확인하세요.
 
 OPENAI_API_KEY 환경 변수를 설정해야 합니다. API 키는 [여기](https://platform.openai.com/account/api-keys) 에서 얻을 수 있습니다.
 
@@ -195,7 +199,7 @@ docker run --rm -it \
 - **`-v ~/.cache/huggingface:/cache/huggingface`**: 호스트의 허깅페이스 캐시를 컨테이너 내부의 `/cache/huggingface`에 마운트합니다.
 - **`-e HF_HOME=/cache/huggingface`**: 마운트된 캐시 디렉터리를 가리키도록 `HF_HOME` 환경 변수를 설정합니다.
 
-### 5. 디버깅 및 수동 액세스
+### 4. 디버깅 및 수동 액세스
 
 디버깅 또는 테스트를 위해 컨테이너에 수동으로 액세스하려면 Bash 셸을 시작합니다:
 
@@ -208,4 +212,4 @@ docker run --rm -it --entrypoint /bin/bash autoraghq/autorag:all
 ## 추가 참고 사항
 
 - 호스트 시스템에 필요한 디렉터리(`sample_config` 및 `projects`)가 있는지 확인하세요.
-- CI/CD 파이프라인에서 실행하는 경우 환경 변수 또는 '.env' 파일을 사용하여 API 키와 경로를 동적으로 관리하는 것이 좋습니다.
+- CI/CD 파이프라인에서 실행하는 경우 환경 변수 또는 `.env` 파일을 사용하여 API 키와 경로를 동적으로 관리하는 것이 좋습니다.
