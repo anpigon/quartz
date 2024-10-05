@@ -4,7 +4,7 @@ updated: 2024-10-05 09:58:48
 dg-home: true
 dg-publish: true
 title: Home
-permlink: 
+permalink: 
 ---
 
 # 저의 디지털 가든에 오신것을 환영합니다
