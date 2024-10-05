@@ -149,7 +149,7 @@ LLM은 다음과 같은 문제를 가지고 있다.
 			- Vector DB
 				- 문서 내용 기반 유사도 검색에 활용
 
-### Chunking Strategy                 
+### Chunking Strategy
 
 - **Semantic Chunking**
 	- 의미상 유사한 단락을 기준으로 Chunking
