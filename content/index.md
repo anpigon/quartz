@@ -1,10 +1,10 @@
 ---
 created: 2024-09-24 09:51:33
-updated: 2024-10-05 09:58:48
+updated: 2024-10-05 10:00:20
 dg-home: true
 dg-publish: true
 title: Home
-permalink: 
+permalink: ""
 ---
 
 # 저의 디지털 가든에 오신것을 환영합니다
