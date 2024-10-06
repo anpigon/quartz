@@ -1,6 +1,6 @@
 ---
 created: 2024-10-06 10:44:31
-updated: 2024-10-06 11:15:47
+updated: 2024-10-06 11:21:45
 dg-publish: true
 ---
 
@@ -77,15 +77,26 @@ modules:
 ```
 > [Parse](https://docs.auto-rag.com/data_creation/parse/parse.html), [Langchain Parse](https://docs.auto-rag.com/data_creation/parse/langchain_parse.html), [Table Hybrid Parse](https://docs.auto-rag.com/data_creation/parse/table_hybrid_parse.html)
 
-### LamaParse
+### [LamaParse](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse)
 
-LamaParse는 하루에 1,000페이지가 무료로 제공됩니다. 유료 요금제에 가입하면 일주일에 7천 개의 무료 페이지가 제공되고 각 페이지당 $0.003이 부과됩니다. [참고](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse/)
+LamaParse는 하루에 1,000페이지가 무료로 제공됩니다. 유료 요금제에 가입하면 일주일에 7천 개의 무료 페이지가 제공되고 각 페이지당 $0.003이 부과됩니다. [Pricing 참고](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse/#pricing)
 
 [여기](https://cloud.llamaindex.ai/api-key)에서 LamaParse API Key를 발급합니다. 그리고 `.env`에 `LLAMA_CLOUD_API_KEY` 를 작성합니다.
 
 #### `.env`
 ```properties
 LLAMA_CLOUD_API_KEY=llx-⋯
+```
+
+### [Upstage Document Parse](https://developers.upstage.ai/docs/apis/document-parse)
+
+Upstage Document Parse는 유료입니다. [Pricing 참고](https://www.upstage.ai/pricing?utm_term=Pricing)
+
+[여기](https://console.upstage.ai/api-keys)에서 Upstage API Key를 발급합니다. 그리고 `.env`에 `UPSTAGE_API_KEY` 를 작성합니다.
+
+#### `.env`
+```properties
+UPSTAGE_API_KEY=up_⋯
 ```
 
 ## 평가 데이터 생성하기
