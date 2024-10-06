@@ -1,0 +1,95 @@
+---
+created: 2024-10-06 10:44:31
+updated: 2024-10-06 11:15:47
+dg-publish: true
+---
+
+> [!summary]
+> AutoRAG 평가 데이터셋을 제작하는 방법에 대해 소개하는 영상입니다.
+> AutoRAG을 사용할 때 핵심은 평가 데이터셋을 만드는 것입니다.
+> 이를 통해 정확한 성능을 평가하고 RAG을 최적화할 수 있습니다.
+> 동규님은 굉장히 많은 시간을 데이터셋 구성에 투자해야 한다고 강조합니다.
+> AutoRAG를 통해 QA 데이터를 생성하거나, LM 모델을 이용하여 코퍼스 데이터셋을 만들 수 있습니다.
+> 프롬프트를 잘 작성하고 고성능 LLM을 사용하여 품질 높은 데이터셋을 생성하는 것이 가장 중요합니다.
+
+![](https://www.youtube.com/watch?v=l1j4QUELLNY)
+> AutoRAG 한국어 튜토리얼: https://github.com/Marker-Inc-Korea/AutoRAG-tutorial-ko
+
+## 설치하기
+
+```sh
+pip install -Uq AUtoRAG
+```
+
+## 평가 데이터셋 생성하기
+## `make_parse.py`
+```python
+import os
+
+from autorag.parser import Parser
+import click
+from dotenv import load_dotenv
+
+root_dir = os.path.dirname(os.path.realpath(__file__))
+
+
+@click.command()
+@click.option('--data_path_glob', type=click.Path(exists=False, dir_okay=True),
+			  default=os.path.join(root_dir, "raw_docs", "*.pdf"))
+@click.option('--config', type=click.Path(exists=True, dir_okay=False), default=os.path.join(root_dir, "config", "parse.yaml"))
+@click.option('--project_dir', type=click.Path(dir_okay=True), default=os.path.join(root_dir, "parsed_raw"))
+def main(data_path_glob, config, project_dir):
+	load_dotenv()
+
+	if not os.path.exists(project_dir):
+		os.makedirs(project_dir)
+
+	parser = Parser(data_path_glob=data_path_glob, project_dir=project_dir)
+	parser.start_parsing(config)
+
+
+if __name__ == '__main__':
+	main()
+```
+
+- `data_path_glob`: 파싱할 문서 파일의 경로 (기본값: `raw_docs/*.pdf`)
+- `config`: 파싱 설정 파일의 경로 (기본값: `config/parse.yaml`)
+- `project_dir`: 파싱된 결과를 저장할 디렉토리 (기본값: `parsed_raw`)
+
+## `parse.yaml`
+
+```yaml
+modules:
+  - module_type: langchain_parse
+    parse_method: [ pdfminer, pdfplumber, pypdfium2, pypdf, pymupdf ]
+  - module_type: langchain_parse
+    parse_method: upstagedocumentparse
+  - module_type: llamaparse
+    result_type: markdown
+    language: ko
+  - module_type: table_hybrid_parse
+    text_parse_module: langchain_parse
+    text_params:
+      parse_method: pdfplumber
+    table_parse_module: langchain_parse
+    table_params:
+      parse_method: upstagedocumentparse
+```
+> [Parse](https://docs.auto-rag.com/data_creation/parse/parse.html), [Langchain Parse](https://docs.auto-rag.com/data_creation/parse/langchain_parse.html), [Table Hybrid Parse](https://docs.auto-rag.com/data_creation/parse/table_hybrid_parse.html)
+
+### LamaParse
+
+LamaParse는 하루에 1,000페이지가 무료로 제공됩니다. 유료 요금제에 가입하면 일주일에 7천 개의 무료 페이지가 제공되고 각 페이지당 $0.003이 부과됩니다. [참고](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse/)
+
+[여기](https://cloud.llamaindex.ai/api-key)에서 LamaParse API Key를 발급합니다. 그리고 `.env`에 `LLAMA_CLOUD_API_KEY` 를 작성합니다.
+
+#### `.env`
+```properties
+LLAMA_CLOUD_API_KEY=llx-⋯
+```
+
+## 평가 데이터 생성하기
+
+```sh
+python make_parse.py
+```
