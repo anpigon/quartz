@@ -1,6 +1,6 @@
 ---
 created: 2024-10-06 10:44:31
-updated: 2024-10-06 11:21:45
+updated: 2024-10-06 11:43:32
 dg-publish: true
 ---
 
@@ -21,8 +21,9 @@ dg-publish: true
 pip install -Uq AUtoRAG
 ```
 
-## 평가 데이터셋 생성하기
-## `make_parse.py`
+## 문서 파싱
+### `run_parse.py` 파일 작성
+
 ```python
 import os
 
@@ -56,7 +57,7 @@ if __name__ == '__main__':
 - `config`: 파싱 설정 파일의 경로 (기본값: `config/parse.yaml`)
 - `project_dir`: 파싱된 결과를 저장할 디렉토리 (기본값: `parsed_raw`)
 
-## `parse.yaml`
+### `config/parse.yaml` 파일 작성
 
 ```yaml
 modules:
@@ -77,7 +78,7 @@ modules:
 ```
 > [Parse](https://docs.auto-rag.com/data_creation/parse/parse.html), [Langchain Parse](https://docs.auto-rag.com/data_creation/parse/langchain_parse.html), [Table Hybrid Parse](https://docs.auto-rag.com/data_creation/parse/table_hybrid_parse.html)
 
-### [LamaParse](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse)
+#### [LamaParse](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse)
 
 LamaParse는 하루에 1,000페이지가 무료로 제공됩니다. 유료 요금제에 가입하면 일주일에 7천 개의 무료 페이지가 제공되고 각 페이지당 $0.003이 부과됩니다. [Pricing 참고](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse/#pricing)
 
@@ -88,7 +89,7 @@ LamaParse는 하루에 1,000페이지가 무료로 제공됩니다. 유료 요�
 LLAMA_CLOUD_API_KEY=llx-⋯
 ```
 
-### [Upstage Document Parse](https://developers.upstage.ai/docs/apis/document-parse)
+#### [Upstage Document Parse](https://developers.upstage.ai/docs/apis/document-parse)
 
 Upstage Document Parse는 유료입니다. [Pricing 참고](https://www.upstage.ai/pricing?utm_term=Pricing)
 
@@ -99,8 +100,83 @@ Upstage Document Parse는 유료입니다. [Pricing 참고](https://www.upstage.
 UPSTAGE_API_KEY=up_⋯
 ```
 
-## 평가 데이터 생성하기
+### 문서 파싱 실행
 
 ```sh
-python make_parse.py
+python run_parse.py
 ```
+
+## 문서 분할하기
+
+### `run_chunk.py` 파일 작성
+
+```python
+import os
+
+import click
+from dotenv import load_dotenv
+
+from autorag.chunker import Chunker
+
+root_dir = os.path.dirname(os.path.realpath(__file__))
+
+"""
+chunk: https://docs.auto-rag.com/data_creation/chunk/chunk.html
+
+"""
+
+@click.command()
+@click.option('--raw_path', type=click.Path(exists=True, dir_okay=False, file_okay=True),
+			  default=os.path.join(root_dir, "parsed_raw", "0", "5.parquet"))
+@click.option('--config', type=click.Path(exists=True, dir_okay=False), default=os.path.join(root_dir, "config", "chunk.yaml"))
+@click.option('--project_dir', type=click.Path(dir_okay=True), default=os.path.join(root_dir, "chunked_corpus"))
+def main(raw_path, config, project_dir):
+	load_dotenv()
+
+	if not os.path.exists(project_dir):
+		os.makedirs(project_dir)
+
+	parser = Chunker.from_parquet(raw_path, project_dir=project_dir)
+	parser.start_chunking(config)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+- `raw_path`: 분할할 parquet 파일의 경로 (기본값: `parsed_raw/0/5.parquet)
+- `config`: 분할 설정 파일의 경로 (기본값: `config/chunk.yaml`)
+- `project_dir`: 파싱된 결과를 저장할 디렉토리 (기본값: `chunked_corpus`)
+
+### `config/chunk.yaml` 파일 작성
+
+```yaml
+modules:
+  - module_type: llama_index_chunk
+    chunk_method: [ Token, Sentence ]
+    chunk_size: [ 1024, 512 ]
+    chunk_overlap: [ 24 ]
+    add_file_name: ko
+  - module_type: llama_index_chunk
+    chunk_method: [ SentenceWindow ]
+    sentence_splitter: kiwi
+    window_size: 3
+    add_file_name: ko
+  - module_type: llama_index_chunk
+    chunk_method: [ Semantic_llama_index ]
+    embed_model: openai
+    buffer_size: 1
+    breakpoint_percentile_threshold: 95
+    add_file_name: ko
+  - module_type: langchain_chunk
+    chunk_method: recursivecharacter
+    separators: [ " ", "\n" ]
+```
+> [Chunk](https://docs.auto-rag.com/data_creation/chunk/chunk.html),  [Langchain Chunk](https://docs.auto-rag.com/data_creation/chunk/langchain_chunk.html), [Llama Index Chunk](https://docs.auto-rag.com/data_creation/chunk/llama_index_chunk.html)
+
+### 문서 분할 실행
+
+```sh
+python run_chunk.py
+```
+
