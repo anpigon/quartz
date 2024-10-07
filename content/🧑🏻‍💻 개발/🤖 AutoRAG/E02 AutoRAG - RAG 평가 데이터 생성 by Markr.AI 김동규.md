@@ -120,11 +120,6 @@ from autorag.chunker import Chunker
 
 root_dir = os.path.dirname(os.path.realpath(__file__))
 
-"""
-chunk: https://docs.auto-rag.com/data_creation/chunk/chunk.html
-
-"""
-
 @click.command()
 @click.option('--raw_path', type=click.Path(exists=True, dir_okay=False, file_okay=True),
 			  default=os.path.join(root_dir, "parsed_raw", "0", "5.parquet"))
