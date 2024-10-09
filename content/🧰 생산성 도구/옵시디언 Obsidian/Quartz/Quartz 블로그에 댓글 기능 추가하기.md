@@ -3,6 +3,8 @@ title: "Quartz 블로그에 댓글 기능 추가하기: Giscus 사용 방법"
 tags:
   - Quartz
 created: 2024-01-30 02:09:56
+updated: 2024-10-09 09:14:24
+dg-publish: true
 ---
 
 Quartz 블로그에 댓글 기능을 추가하고 싶으신가요? [Giscus](https://giscus.app/ko)를 사용하면 Quartz 블로그에 쉽게 댓글 기능을 추가할 수 있습니다. Giscus는 GitHub Discussions를 기반으로 하는 무료 댓글 시스템으로, 별도의 DB 서버가 필요 없습니다.
@@ -23,21 +25,33 @@ Quartz 블로그에 댓글 기능을 추가하고 싶으신가요? [Giscus](http
 
 `quartz.layout.ts`
 ```ts
-afterBody: [
-  Component.Comments({
-    provider: 'giscus',
-    options: {
-      // data-repo
-      repo: 'anpigon/anpigon-quartz',
-      // data-repo-id
-      repoId: 'R_kgDOLKhz-Q',
-      // data-category
-      category: 'Announcements',
-      // data-category-id
-      categoryId: 'DIC_kwDOLKhz-c4CczBa',
-    }
+import { PageLayout, SharedLayout } from "./quartz/cfg"
+import * as Component from "./quartz/components"
+
+// components shared across all pages
+export const sharedPageComponents: SharedLayout = {
+  head: Component.Head(),
+  header: [],
+  afterBody: [
+	// 이 부분을 추가해주세요.
+	Component.Comments({
+		provider: 'giscus',
+		options: {
+			// data-repo
+			repo: 'anpigon/anpigon-quartz',
+			// data-repo-id
+			repoId: 'R_kgDOLKhz-Q',
+			// data-category
+			category: 'Announcements',
+			// data-category-id
+			categoryId: 'DIC_kwDOLKhz-c4CczBa',
+		}
+	}),
+	],
+  footer: Component.Footer({
+    links: {},
   }),
-],
+}
 ```
 
 이 글을 따라하면, 블로그에 손쉽게 댓글 기능을 추가할 수 있습니다. Giscus를 통해 댓글 기능을 추가하는 과정은 간단하며, 개발자가 아니어도 쉽게 따라 할 수 있습니다.
