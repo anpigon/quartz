@@ -48,7 +48,7 @@ GitHub의 [Quartz](https://github.com/jackyzha0/quartz) 페이지에 방문합�
 
 [Flowershow 플러그인](https://obsidian.md/plugins?id=flowershow)을 사용하면 옵시디언 노트를 깃허브 저장소에 업로드 할 수 있습니다. 이를 위해 플러그인을 설치하고 `Flowershow: Publish Single Note` 명령을 실행합니다. 그러면 해당 노트가 깃허브 저장소에 업로드됩니다.
 
-Flowershow 플러그인을 사용하여 노트를 업로드한 후에는 옵시디언에 추가된 리본 아이콘 🌱을 클릭하여, 업데이트된 노트를 다시 업로드하거나 삭제할 수 있습니다.
+Flowershow 플러그인을 사용하여 노트를 업로드한 후에는 옵시디언에 추가된 리본 아이콘 🌱을 클릭하여, 업데이트된 노트를 다시 업로드하거나 삭제할 수 있습니다. 
 
 만약 노트 파일 경로가 변경되었다면, 리본 아이콘을 통해 해당 노트를 삭제한 후, 변경된 경로에 있는 노트를 다시 업로드해야 합니다.
 
@@ -58,7 +58,7 @@ Flowershow 플러그인을 사용하여 노트를 업로드한 후에는 옵시�
 > [!info] 정보
 > 웹사이트에 접속했을 때 ***"404 Either this page is private or doesn't exist."*** 라는 메시지가 표시된다면, 이는 `content` 폴더 내부에 `index.md` 파일이 없는 것이 원인일 수 있습니다. 이 문제를 해결하기 위해서는 `content` 폴더 안에 `index.md` 파일을 생성해 주세요.
 > 만약 방법을 모르시겠다면, [저의 블로그 깃허브 저장소](https://github.com/anpigon/anpigon-quartz/blob/v4/content/index.md)를 참고해 주세요.
-
+ 
 
 ## 마치며
 
@@ -67,11 +67,11 @@ Flowershow 플러그인을 사용하여 노트를 업로드한 후에는 옵시�
 이 사이트는 Obsidian 노트를 기반으로 만들어졌으며, Quartz 템플릿과 Flowershow 플러그인을 활용해 Cloudflare를 통해 온라인에 게시되었습니다. 여기에는 앞으로 제가 작성한 노트를 공유할 예정입니다.
 
 ## 연결 문서
-- [[Quartz 블로그에 댓글 기능 추가하기]]
+- [[🧰 생산성 도구/옵시디언 Obsidian/Quartz/Quartz 블로그에 댓글 기능 추가하기]]
 - [[Flowershow 플러그인으로 무료로 퍼블리시하는 방법]]
 
 ## Quartz 템플릿으로 만든 블로그
-- [Drill Garden](https://drillgarden.netlify.app/)
+- [Drill Garden](https://drillgarden.netlify.app/) 
 - [DQ's garden](https://dqjeon.github.io)
-- [개발자 유니의 두 번째 뇌](https://shin-jae-yoon.github.io)
+- [개발자 유니의 두 번째 뇌](https://shin-jae-yoon.github.io) 
 - [🌱Littleroot](https://nottaro.github.io/littleroot)
