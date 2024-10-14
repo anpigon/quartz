@@ -1,8 +1,10 @@
 ---
 created: 2024-10-02 11:04:12
-updated: 2024-10-02 11:30:20
+updated: 2024-10-03 09:34:40
 title: OpenAI 실시간 API 소개
 dg-publish: true
+tags:
+  - OpenAI
 ---
 
 > 출처: https://openai.com/index/introducing-the-realtime-api/
@@ -40,7 +42,7 @@ dg-publish: true
 
 채팅 완료 API의 오디오는 앞으로 몇 주 내에 새로운 모델인 `gpt-4o-audio-preview`로 출시될 예정입니다. `gpt-4o-audio-preview`를 사용하면 개발자는 텍스트 또는 오디오를 GPT-4o에 입력하고 텍스트, 오디오 또는 두 가지 모두로 응답을 받을 수 있습니다.
 
-실시간 API는 텍스트 토큰과 오디오 토큰을 모두 사용합니다. 텍스트 입력 토큰의 가격은 1M당 \$5, 출력 토큰의 가격은 1M당 \$20입니다. 오디오 입력은 1M 토큰당 100달러, 출력은 1M 토큰당 200달러로 책정됩니다. 이는 오디오 입력의 경우 분당 약 0.06달러, 오디오 출력의 경우 분당 0.24달러에 해당하는 금액입니다. Chat Completions API의 오디오도 동일한 가격이 적용됩니다.
+실시간 API는 텍스트 토큰과 오디오 토큰을 모두 사용합니다. 텍스트 입력 토큰의 가격은 1M당 $5, 출력 토큰의 가격은 1M당 $20입니다. 오디오 입력은 1M 토큰당 100달러, 출력은 1M 토큰당 200달러로 책정됩니다. 이는 오디오 입력의 경우 분당 약 0.06달러, 오디오 출력의 경우 분당 0.24달러에 해당하는 금액입니다. Chat Completions API의 오디오도 동일한 가격이 적용됩니다.
 
 ## 안전 및 개인정보 보호
 
@@ -67,3 +69,8 @@ dg-publish: true
 - **확장된 모델 지원**: 실시간 API는 향후 해당 모델의 버전에서 GPT-4o mini도 지원할 예정입니다.
 
 개발자들이 이러한 새로운 기능을 활용하여 교육부터 번역, 고객 서비스, 접근성 등 다양한 사용 사례에서 사용자를 위한 매력적인 새 오디오 경험을 어떻게 만들어낼지 기대가 됩니다.
+
+---
+
+## Links
+- [🤖 OpenAI의 보이스모드가 API로 공개되었습니다.](https://www.linkedin.com/posts/kojunseo_openai-platform-activity-7247384461179322368-mrMT?utm_source=share&utm_medium=member_desktop)
