@@ -1,6 +1,6 @@
 ---
 tags:
-  - 개발자도구
+  - 개발/도구
   - VSCode
 created: 2024-01-31 02:34:12
 title: 2024년 생산성 향상을 위한 Visual Studio Code 익스텐션
